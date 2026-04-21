@@ -1,27 +1,21 @@
 import os
-from decouple import config
 from pathlib import Path
+from decouple import config
 
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+# ======================
+# SECURITY
+# ======================
+SECRET_KEY = config('SECRET_KEY', default='unsafe-secret-key')
 
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
+ALLOWED_HOSTS = ['*']  # Render handles domain
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8=ii=z&h64hwk(80ao_cmrd=3lavog=7)@%qwwh6u^ae*y4@$x'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['localhost', 'levindecor.in', 'http://levindecor.in', 'https://levindecor.in', 'www.levindecor.in', 'https://www.levindecor.in', 'http://levindecor.in', "*"]
-
-
-SITE_ID = 1
-# Application definition
-
+# ======================
+# APPLICATIONS
+# ======================
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -29,6 +23,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # your apps
     'authenticate',
     'levin_main',
     'panel',
@@ -38,8 +34,12 @@ INSTALLED_APPS = [
     'redirect',
 ]
 
+# ======================
+# MIDDLEWARE
+# ======================
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # IMPORTANT
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -50,6 +50,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mylevin.urls'
 
+# ======================
+# TEMPLATES
+# ======================
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -68,10 +71,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mylevin.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+# ======================
+# DATABASE
+# ======================
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -79,52 +81,46 @@ DATABASES = {
     }
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
-
+# ======================
+# PASSWORD VALIDATION
+# ======================
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
-
+# ======================
+# INTERNATIONAL
+# ======================
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'Asia/Kolkata'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
+# ======================
+# STATIC FILES
+# ======================
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-if DEBUG:
-    STATIC_ROOT =  os.path.join(BASE_DIR, 'static')
-else :
-    STATICFILES_DIRS =  [os.path.join(BASE_DIR, 'static')]  # set debug true before calling collectstatic
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# ======================
+# MEDIA FILES
+# ======================
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
+# ======================
+# EMAIL CONFIG
+# ======================
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "mail.krioskcreata.com"
 EMAIL_USE_TLS = True
@@ -132,13 +128,15 @@ EMAIL_PORT = 2525
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
-
+# ======================
+# LOGIN
+# ======================
 LOGIN_URL = '/authentication/login/'
 
-
+# ======================
+# SECURITY SETTINGS
+# ======================
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
-
 SECURE_SSL_REDIRECT = False
 SECURE_PROXY_SSL_HEADER = None
-
