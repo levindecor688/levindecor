@@ -16,17 +16,10 @@ urlpatterns = [
 
     # catalogue
     url(r'^catalogues/$', views.catalogues, name='catalogues'),
-    url(r'^catalogue/remark/$', views.catalogue_remark, name='catalogue_remark'),
-    url(r'^catalogue/ultima/$', views.catalogue_ultima, name='catalogue_ultima'),
+    url(r'^catalogue/1mm/$', views.catalogue_1mm, name='catalogue_1mm'),
     url(r'^catalogue/elite/$', views.catalogue_elite, name='catalogue_elite'),
-    url(r'^catalogue/doorvin/$', views.catalogue_doorvin, name='catalogue_doorvin'),
-    url(r'^catalogue/lecolours/$', views.catalogue_lecolours, name='catalogue_lecolours'),
     url(r'^catalogue/lemore/$', views.catalogue_lemore, name='catalogue_lemore'),
-    url(r'^catalogue/leone/$', views.catalogue_leone, name='catalogue_leone'),
-    url(r'^catalogue/catalogue_decorative/$', views.catalogue_decorative, name='catalogue_decorative'),
 
     url(r'^error-found/$', views.error, name='error'),
 
 ]
-
-

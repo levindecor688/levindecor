@@ -133,6 +133,7 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 # ======================
 LOGIN_URL = '/authentication/login/'
 
+DEBUG = True
 # ======================
 # SECURITY SETTINGS
 # ======================

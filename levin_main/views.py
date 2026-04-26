@@ -202,67 +202,16 @@ def catalogues(request) :
     return render(request, 'front/catalogues.html', send)
 
 
-def catalogue_remark(request) :
-
-    response = redirect('/static/front/catalogues/1mm_decorative.pdf')
-    
-    return response
+def catalogue_1mm(request):
+    return redirect("https://drive.google.com/file/d/1PHV-p9M2LlysIyKm9vzpaZy2c_7NmH2h/preview")
 
 
-def catalogue_lecolours(request) :
-
-    response = redirect('/static/front/catalogues/le_colours.pdf')
-    
-    return response
-    
-    
-def catalogue_lemore(request) :
-
-    response = redirect('/static/front/catalogues/lemore.pdf')
-    
-    return response
-    
-def catalogue_leone(request) :
-
-    response = redirect('/static/front/catalogues/leone.pdf')
-    
-    return response
+def catalogue_elite(request):
+    return redirect("https://drive.google.com/file/d/1kA43qowB8PMKD3x_12vyjoxRAmoTk-Ca/preview")
 
 
-
-def catalogue_ultima(request) :
-
-    return render(request, 'front/catalogue_ultima.html')
-
-
-# def catalogue_elite(request) :
-
-#     return render(request, 'front/catalogue_elite.html')
-
-def catalogue_elite(request) :
-
-    response = redirect('/static/front/catalogues/elite.pdf')
-    
-    return response
-    
-def catalogue_doorvin(request) :
-
-    response = redirect('/static/front/catalogues/doorvin.pdf')
-    
-    return response
-    
-def catalogue_decorative(request) :
-
-    response = redirect('/static/front/catalogues/1mm_decorative.pdf')
-    
-    return response
-
-
-
-
-# def catalogue_doorvin(request) :
-
-#     return render(request, 'front/catalogue_doorvin.html')
+def catalogue_lemore(request):
+    return redirect("https://drive.google.com/file/d/1EryS9kkKtxfk2KJuHVfu04N-QeLUwIAo/preview")
     
 
 
