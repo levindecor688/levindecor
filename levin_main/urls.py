@@ -18,7 +18,7 @@ urlpatterns = [
     url(r'^catalogues/$', views.catalogues, name='catalogues'),
     url(r'^catalogue/1mm/$', views.catalogue_1mm, name='catalogue_1mm'),
     url(r'^catalogue/elite/$', views.catalogue_elite, name='catalogue_elite'),
-    url(r'^catalogue/lemore/$', views.catalogue_lemore, name='catalogue_lemore'),
+    # url(r'^catalogue/lemore/$', views.catalogue_lemore, name='catalogue_lemore'),
 
     url(r'^error-found/$', views.error, name='error'),
 
