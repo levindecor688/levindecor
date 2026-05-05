@@ -210,8 +210,8 @@ def catalogue_elite(request):
     return redirect("https://drive.google.com/file/d/1kA43qowB8PMKD3x_12vyjoxRAmoTk-Ca/preview")
 
 
-# def catalogue_lemore(request):
-#     return redirect("https://drive.google.com/file/d/1EryS9kkKtxfk2KJuHVfu04N-QeLUwIAo/preview")
+def catalogue_lemore(request):
+    return redirect("https://drive.google.com/file/d/1EryS9kkKtxfk2KJuHVfu04N-QeLUwIAo/preview")
     
 
 
