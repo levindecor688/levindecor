@@ -1,5 +1,4 @@
 *.pdf
-media/
 staticfiles/
 venv/
 __pycache__/
