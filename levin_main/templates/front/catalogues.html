@@ -52,7 +52,8 @@
                                     <div class="swiper-slide">
                                         <div class="banner-item banner-item-5ef4540fd5fbc tal middle">
                                             <div class="bg-overlay">
-                                                <div class="image" style="background-image: url('{% static "front/images/new/catalogue_decorative.jpg" %}')"></div>
+                                                {% static 'front/images/new/catalogue_decorative.jpg' as img1 %}
+                                                <div class="image" style="background-image: url('{{ img1 }}');"></div>
                                             </div>
                                             <div class="container full-height">
                                                 <div class="content-row">
@@ -75,12 +76,13 @@
                                     <div class="swiper-slide">
                                         <div class="banner-item banner-item-5ef4540fd5fbc tal middle">
                                             <div class="bg-overlay">
-                                                <div class="image" style="background-image: url('{% static "front/images/new/elite_catalogue.jpg" %}')"></div>
+                                                {% static 'front/images/new/elite_catalogue.jpg' as img2 %}
+                                                <div class="image" style="background-image: url('{{ img2 }}');"></div>
                                             </div>
                                             <div class="container full-height">
                                                 <div class="content-row">
                                                     <div class="heading-block tal">
-                                                        <div class="h h3">Elite-0.8mm</div>
+                                                        <div class="h h3">Elite 1</div>
                                                     </div>
                                                     <div class="clear"></div>
                                                     <div class="text">
@@ -99,7 +101,8 @@
                                  <div class="swiper-slide">
                                         <div class="banner-item banner-item-5ef4540fd5fbc tal middle">
                                             <div class="bg-overlay">
-                                                <div class="image" style="background-image: url('{% static "front/images/new/catalogue-lemore.jpg" %}')"></div>
+                                                {% static 'front/images/new/catalogue-lemore.jpg' as img3 %}
+                                                <div class="image" style="background-image: url('{{ img3 }}');"></div>
                                             </div>
                                             <div class="container full-height">
                                                 <div class="content-row">
@@ -112,6 +115,30 @@
                                                     </div>
                                                     <div class="clear"></div>
                                                     <a href="{% url 'catalogue_lemore' %}" class="button-style1" target="_self" data-magic-cursor="link-small">
+                                                        <span>Explore</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>    
+
+                                    <div class="swiper-slide">
+                                        <div class="banner-item banner-item-5ef4540fd5fbc tal middle">
+                                            <div class="bg-overlay">
+                                                {% static 'front/images/new/catalogue_decorative.jpg' as img4 %}
+                                                <div class="image" style="background-image: url('{{ img4 }}');"></div>
+                                            </div>
+                                            <div class="container full-height">
+                                                <div class="content-row">
+                                                    <div class="heading-block tal">
+                                                        <div class="h h3">Levin Velvet</div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <div class="text">
+                                                        Time is just right to set the impressions<br> on cold waves.
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <a href="{% url 'catalogue_levin_velvet' %}" class="button-style1" target="_self" data-magic-cursor="link-small">
                                                         <span>Explore</span>
                                                     </a>
                                                 </div>
