@@ -203,7 +203,7 @@ def catalogues(request) :
 
 
 def catalogue_1mm(request):
-    return redirect("https://drive.google.com/file/d/1PHV-p9M2LlysIyKm9vzpaZy2c_7NmH2h/preview")
+    return redirect("https://drive.google.com/file/d/1o0KoibGslywXicM6Rd6C_KK2J_5ag-aw/preview")
 
 
 def catalogue_elite(request):
