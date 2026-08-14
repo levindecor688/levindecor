@@ -111,8 +111,9 @@
                                         <a href="{% url 'catalogues' %}"><span>Catalogues</span></a>
                                         <ul class="sub-menu">
                                             <li id="menu-item-2895" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2895">
-                                                <a href="{% url 'catalogue_1mm' %}"><span>LEVIN 1MM</span></a>
+                                                <a href="{% url 'catalogue_1mm' %}"><span>1mm</span></a>
                                             </li>
+
                                             <li id="menu-item-3117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3117">
                                                 <a href="{% url 'catalogue_elite' %}"><span>Elite 1</span></a>
                                             </li>
@@ -122,17 +123,6 @@
                                         </ul>
                                     </li>
 
-                                    <!-- events -->
-                                    <li id="menu-item-2896" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2896 {% if request.resolver_match.url_name == 'events' %} current-menu-ancestor current-menu-parent {% endif %}">
-                                        <a><span>Events</span></a>
-                                        <ul class="sub-menu">
-                                            {% for events in events %}
-                                            <li id="menu-item-3190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3190">
-                                                <a href="{% url 'events' name_slug=events.name_slug %}"><span>{{events.name | title}}</span></a>
-                                            </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </li>
 
                                     <!-- visualizer -->
                                     <li id="menu-item-2896" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2896 {% if request.resolver_match.url_name == 'visualizer' %} current-menu-ancestor current-menu-parent {% endif %}">
@@ -243,8 +233,9 @@
                             <a href="{% url 'catalogues' %}">Catalogues</a>
                             <ul class="sub-menu">
                                 <li class="menu-item menu-item-type-post_type menu-item-object-mphb_room_type menu-item-3079">
-                                    <a href="{% url 'catalogue_1mm' %}">LEVIN 1MM</a>
+                                    <a href="{% url 'catalogue_1mm' %}">1mm</a>
                                 </li>
+
                                 <li class="menu-item menu-item-type-post_type menu-item-object-mphb_room_type menu-item-3079">
                                     <a href="{% url 'catalogue_elite' %}">Elite 1</a>
                                 </li>
@@ -258,17 +249,6 @@
                             </ul>
                         </li>
 
-                        <!-- events -->
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2894">
-                            <a href="#">Events</a>
-                            <ul class="sub-menu">
-                                {% for events in events %}
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2895 {% if request.resolver_match.url_name == 'events' %} current-menu-ancestor current-menu-parent {% endif %}">
-                                    <a href="{% url 'events' name_slug=events.name_slug %}">{{events.name | title}}</a>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        </li>
 
                         <!-- visualizer -->
                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2894">
