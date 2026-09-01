@@ -203,19 +203,19 @@ def catalogues(request) :
 
 
 def catalogue_1mm(request):
-    return redirect("https://drive.google.com/file/d/1PHV-p9M2LlysIyKm9vzpaZy2c_7NmH2h/preview")
+    return render(request, 'front/catalogue_viewer.html', {'pdf_url': '/static/catalogues/1mm.pdf'})
 
 
 def catalogue_elite(request):
-    return redirect("https://drive.google.com/file/d/1Uz9LbryEQiIBL2icW1y2B5Rg9V9UCwGj/preview")
+    return render(request, 'front/catalogue_viewer.html', {'pdf_url': '/static/catalogues/elite_1.pdf'})
 
 
 def catalogue_lemore(request):
-    return redirect("https://drive.google.com/file/d/1EryS9kkKtxfk2KJuHVfu04N-QeLUwIAo/preview")
+    return render(request, 'front/catalogue_viewer.html', {'pdf_url': '/static/catalogues/lemore.pdf'})
     
 
 def catalogue_levin_velvet(request):
-    return redirect("https://drive.google.com/file/d/1woI6WWZW5AprVXpdb1-NCaEenyoiGJJm/preview")
+    return render(request, 'front/catalogue_viewer.html', {'pdf_url': '/static/catalogues/levin_velvet.pdf'})
     
 
 

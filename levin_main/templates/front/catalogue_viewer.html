@@ -1,0 +1,14 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="header-space" style="height: 125px !important;"></div>
+
+<main class="main-container">
+    <div class="container-fluid" style="padding: 0; margin: 0;">
+        <div style="height: 85vh; width: 100%;">
+            <iframe src="{{ pdf_url }}#toolbar=0" style="width: 100%; height: 100%; border: none;" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</main>
+{% endblock content %}
