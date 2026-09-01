@@ -127,6 +127,8 @@ CLOUDINARY_STORAGE = {
     'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME', default=''),
     'API_KEY': config('CLOUDINARY_API_KEY', default='642457568517121'),
     'API_SECRET': config('CLOUDINARY_API_SECRET', default='vAcexrZfAmCqCVJWKhuif25bEv0'),
+    'PREFIX': '',
+    'STATIC_TAG': 'static',
 }
 
 if config('CLOUDINARY_CLOUD_NAME', default=''):
